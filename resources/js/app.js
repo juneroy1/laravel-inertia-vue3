@@ -1,6 +1,7 @@
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import { InertiaProgress } from '@inertiajs/progress';
 
 createInertiaApp({
     resolve: (name) =>
@@ -14,3 +15,8 @@ createInertiaApp({
             .mount(el);
     },
 });
+
+InertiaProgress.init({
+    color: 'red',
+    showSpinner: true
+})
