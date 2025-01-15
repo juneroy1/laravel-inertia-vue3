@@ -1,11 +1,11 @@
 <template>
     <div>
-        <h1>Hello from Vue 3 with Inertia.js!</h1>
+        <h1>Settings</h1>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Welcome",
+    name: "Settings",
 };
 </script>
