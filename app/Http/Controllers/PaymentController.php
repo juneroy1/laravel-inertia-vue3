@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SuccessPayment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
@@ -36,6 +38,9 @@ class PaymentController extends Controller
 
     public function success()
     {
+        $user = User::find(1);
+        // Dispatch the job
+        SuccessPayment::dispatch($user);
         // call the email notification
         return inertia('Payment/Success');
     }
