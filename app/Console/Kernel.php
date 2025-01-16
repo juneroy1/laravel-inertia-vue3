@@ -14,9 +14,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // Run an Artisan command daily at midnight
-        // $schedule->command('app:payment-reminder-emails')->daily();
-        $schedule->command('app:payment-reminder-emails')->everyMinute();
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('app:paymentreminder')->everyMinute();
+        // $schedule->command('app:hourly-api-call')->everyMinute();
+        // dd("test");
+        // $schedule->command('inspire')->everyMinute();
     }
 
     /**
